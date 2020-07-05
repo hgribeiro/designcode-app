@@ -12,18 +12,18 @@ import {
   Wrapper,
 } from "./styles";
 
-const Card = () => {
+const Card = ({ image, title, logo, caption, subtitle }) => {
   return (
     <Container>
       <Cover>
-        <Image source={require("../../assets/background2.jpg")} />
-        <Title>Styled components</Title>
+        <Image source={image} />
+        <Title>{title}</Title>
       </Cover>
       <Content>
-        <Logo source={require("../../assets/logo-react.png")} />
+        <Logo source={logo} />
         <Wrapper>
-          <Caption>React Native</Caption>
-          <Subtitle> 5 of 12 sections</Subtitle>
+          <Caption>{caption}</Caption>
+          <Subtitle>{subtitle}</Subtitle>
         </Wrapper>
       </Content>
     </Container>

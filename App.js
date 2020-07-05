@@ -1,18 +1,39 @@
 import React from "react";
-import { Text } from "react-native";
+import { ScrollView } from "react-native";
 import styled from "styled-components";
 import Card from "./components/Card/Card";
 
 export default function App() {
   return (
     <Container>
-      <TitleBar>
-        <Avatar source={require("./assets/avatar.jpg")} />
-        <Title>Welcome back,</Title>
-        <Name>Hugo</Name>
-      </TitleBar>
-      <Subtitle>Continue Learning...</Subtitle>
-      <Card />
+      <ScrollView style={{ height: "100%" }}>
+        <TitleBar>
+          <Avatar source={require("./assets/avatar.jpg")} />
+          <Title>Welcome back,</Title>
+          <Name>Hugo</Name>
+        </TitleBar>
+        <Subtitle>Continue Learning...</Subtitle>
+        <ScrollView
+          horizontal={true}
+          style={{ paddingBottom: 30 }}
+          showsHorizontalScrollIndicator={false}
+        >
+          <Card
+            title="Styled Components"
+            image={require("./assets/background2.jpg")}
+            logo={require("./assets/logo-react.png")}
+            caption="React Native"
+            subtitle="5 of 12 sections"
+          />
+          <Card
+            title="Styled Components 2"
+            image={require("./assets/background2.jpg")}
+            logo={require("./assets/logo-react.png")}
+            caption="React Native"
+            subtitle="5 of 12 sections"
+          />
+        </ScrollView>
+      </ScrollView>
     </Container>
   );
 }
